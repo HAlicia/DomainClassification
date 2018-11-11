@@ -31,6 +31,7 @@ from tensorflow.keras.models import Model
 from keras.utils.np_utils import to_categorical
 from tensorflow.keras.layers import Dense, Dropout, Embedding, Conv1D, GlobalMaxPool1D, Activation, Flatten, Input
 from sklearn.preprocessing import LabelEncoder
+import matplotlib.pyplot as plt
 
 import argparse
 import numpy as np
@@ -43,7 +44,7 @@ parser.add_argument("--static_mode", choices=[True, False], default=False,
                     help="whether it is static")
 parser.add_argument("--USE_WORD_EMBDEDDING", choices=[True, False], default=False,
                     help="use word embedding?")
-parser.add_argument("--NUM_EPOCH", type=int, default=25,
+parser.add_argument("--NUM_EPOCH", type=int, default=5,
                     help="NUM_EPOCH")
 
 # TODO
@@ -103,6 +104,39 @@ class textCNN(object):
         self.model.compile('adam', 'categorical_crossentropy', ['acc'])
         self.track = self.model.fit(X_train, y_train, BATCH_SIZE, EPOCH_NUM, validation_data=[X_val, y_val])
 
+    def plot_fit(self, track, plot_filename=None):
+        assert len(track.history) == 4, "Error: did not fit validation data!"
+        acc = track.history['acc']
+        val_acc = track.history['val_acc']
+        loss = track.history['loss']
+        val_loss = track.history['val_loss']
+        epochs = range(1, len(loss) + 1)
+
+        plt.figure(figsize=(16, 4))
+        plt.subplot(121)
+        # "bo" is for "blue dot"
+        plt.plot(epochs, loss, 'r', label='Training loss')
+        # b is for "solid blue line"
+        plt.plot(epochs, val_loss, 'g--', label='Validation loss')
+        plt.title('Training and validation loss')
+        plt.xlabel('Epochs')
+        plt.ylabel('Loss')
+        plt.legend()
+        plt.grid()
+
+        plt.subplot(122)
+        # "bo" is for "blue dot"
+        plt.plot(epochs, acc, 'b', label='Training acc')
+        # b is for "solid blue line"
+        plt.plot(epochs, val_acc, 'y--', label='Validation acc')
+        plt.title('Training and validation acc')
+        plt.xlabel('Epochs')
+        plt.ylabel('Acc')
+        plt.legend()
+        plt.grid()
+        # save_fig(plt, plot_filename=plot_filename)
+        plt.show()
+
 
 def data_provider():
     (X_train, y_train), (X_val, y_val) = load_data()
@@ -145,7 +179,17 @@ def data_provider():
     return train_pad_seq, y_train, val_pad_seq, y_val, embed, tokenizer
 
 
+def save_fig(plt, plot_filename, plot_dir):
+    print("plot_dir:", plot_dir)
+    if not os.path.exists(plot_dir):
+        os.mkdir(plot_dir)
+    filename = os.path.join(plot_dir, plot_filename)
+    plt.savefig('{}'.format(filename))
+    print('{} saved!'.format(filename))
+
+
 if __name__ == '__main__':
     train_pad_seq, y_train, val_pad_seq, y_val, embed, tokenizer = data_provider()
     cnn = textCNN(embed, filters, kernel_size, numClasses=y_train.shape[1])
     cnn.train(train_pad_seq, y_train, val_pad_seq, y_val)
+    cnn.plot_fit(cnn.track)
