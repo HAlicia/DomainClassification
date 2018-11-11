@@ -180,6 +180,7 @@ def data_provider():
 
 
 def save_fig(plt, plot_filename, plot_dir):
+    import os
     print("plot_dir:", plot_dir)
     if not os.path.exists(plot_dir):
         os.mkdir(plot_dir)
