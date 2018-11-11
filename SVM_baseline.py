@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
 -------------------------------------------------
-   File Name：     SVM_baseline
-   Description :
-   Author :       chaiyekun
-   date：          2018/11/10
+   @ File Name：     SVM_baseline
+   @ Description :
+   @ Author :       chaiyekun
+   @ date：          2018/11/10
 -------------------------------------------------
-   Change Activity:
-                   2018/11/10:
+   @ Change Activity:
+                   2018/11/11:
 -------------------------------------------------
 """
 
@@ -19,7 +19,6 @@ import argparse
 from sklearn import svm
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import classification_report, confusion_matrix
-import numpy as np
 from data_loader import load_data, load_testset
 
 parser = argparse.ArgumentParser(description="SVM configuration ...")
@@ -46,7 +45,8 @@ X_train_mat = tokenizer.texts_to_matrix(X_train, feat)
 y_train_le = le.transform(y_train)
 X_val_mat = tokenizer.texts_to_matrix(X_val, feat)
 y_val_le = le.transform(y_val)
-clf = svm.SVC(kernel=kernel, gamma='auto',  max_iter=max_iter, decision_function_shape='ovr', shrinking=False, verbose=True)
+clf = svm.SVC(kernel=kernel, gamma='auto', max_iter=max_iter, decision_function_shape='ovr', shrinking=False,
+              verbose=True)
 
 print("SVM model starts training ..")
 clf.fit(X_train_mat, y_train_le)
@@ -65,8 +65,7 @@ X_test_mat = tokenizer.texts_to_matrix(X_test, feat)
 y_test_le = le.transform(y_test)
 y_pred = clf.predict(X_test_mat)
 confusionMat = confusion_matrix(y_test_le, y_pred)
-f1_measure = classification_report(y_test_le,y_pred)
+f1_measure = classification_report(y_test_le, y_pred)
 
 print(confusionMat)
 print(f1_measure)
-

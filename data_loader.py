@@ -13,6 +13,7 @@
 from configs import *
 
 import pandas as pd
+import numpy as np
 
 
 def load_data():
@@ -34,7 +35,19 @@ def load_testset():
     return X_test, y_test
 
 
-def minibatch_generator(X, y, batch_size=BATCH_SIZE):
+def load_pretrained_edmbedding(embedding_file):
+    embedding_dict = {}
+    with open(embedding_file, encoding='utf8') as f:
+        for line in f:
+            values = line.split()
+            word = values[0]
+            if word.isdigit():
+                continue
+            embedding_dict[word] = np.asarray(values[1:], 'float32')
+    return embedding_dict
+
+
+def minibatch_generator(X, y, batch_size):
     while True:
         for i in range(0, len(X), batch_size):
             X_batch = X[i:i + batch_size]

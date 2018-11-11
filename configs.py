@@ -20,11 +20,9 @@ svm_result_file = os.path.join(result_dir, 'SVM', 'svm_res.md')
 
 SEED = 20181111
 # params
-MAX_NUM_WORDS = 20000
-MAX_SEQUENCE_LENGTH = 100
+MAX_NUM_WORDS = None
+MAX_SEQUENCE_LENGTH = None
 
 # hyper-params
 # TODO
-EPOCH_NUM = 25
-BATCH_SIZE = 128
-EMBEDDING_DIM = 300
+
