@@ -15,9 +15,22 @@ from configs import *
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
+import jieba
+
+
+def tokenize_jieba(data_file):
+    df = pd.read_csv(data_file, sep='\t', names=['X', 'y'])
+
+    def series_tok(x):
+        seg_list = jieba.cut(x, cut_all=False)
+        return " ".join(seg_list)
+
+    df['X_cut'] = df['X'].map(series_tok)
+    return df['X_cut'], df['y']
 
 
 def load_data():
+    """ use this function if val set is split"""
     # load training data ..
     train_data = pd.read_csv(train_datafile, sep='\t', names=['X_train', 'y_train'])
     X_train, y_train = train_data['X_train'], train_data['y_train']
@@ -30,17 +43,18 @@ def load_data():
 
 
 def split_and_load_data(split_frac=.2):
-    data = pd.read_csv(raw_data, sep='\t', names=['X', 'y'])
-    X, y = data['X'], data['y']
+    # data = pd.read_csv(raw_data, sep='\t', names=['X', 'y'])
+    # X, y = data['X'], data['y']
+    X, y = tokenize_jieba(data_file=raw_data)
     X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=split_frac, random_state=SEED, shuffle=True)
     return (X_train, y_train), (X_val, y_val)
 
 
 def load_testset():
     # load test data
-    test_data = pd.read_csv(test_datafile, sep='\t', names=['X_test', 'y_test'])
-    X_test, y_test = test_data['X_test'].astype(str), test_data['y_test'].astype(str)
-    return X_test, y_test
+    # test_data = pd.read_csv(test_datafile, sep='\t', names=['X_test', 'y_test'])
+    X, y = tokenize_jieba(test_datafile)
+    return X.astype(str), y.astype(str)
 
 
 def load_pretrained_edmbedding(embedding_file):
@@ -64,4 +78,4 @@ def minibatch_generator(X, y, batch_size):
 
 
 if __name__ == '__main__':
-    load_data()
+    tokenize_jieba(data_file=raw_data)
