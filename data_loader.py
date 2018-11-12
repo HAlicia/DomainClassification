@@ -14,6 +14,7 @@ from configs import *
 
 import pandas as pd
 import numpy as np
+from sklearn.model_selection import train_test_split
 
 
 def load_data():
@@ -28,10 +29,17 @@ def load_data():
     return (X_train, y_train), (X_val, y_val)
 
 
+def split_and_load_data(split_frac=.2):
+    data = pd.read_csv(raw_data, sep='\t', names=['X', 'y'])
+    X, y = data['X'], data['y']
+    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=split_frac, random_state=SEED, shuffle=True)
+    return (X_train, y_train), (X_val, y_val)
+
+
 def load_testset():
     # load test data
     test_data = pd.read_csv(test_datafile, sep='\t', names=['X_test', 'y_test'])
-    X_test, y_test = test_data['X_test'], test_data['y_test']
+    X_test, y_test = test_data['X_test'].astype(str), test_data['y_test'].astype(str)
     return X_test, y_test
 
 

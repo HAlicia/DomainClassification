@@ -6,12 +6,13 @@ processed_data_dir = os.path.join(data_dir, 'processed_data')
 embedding_dir = os.path.join(work_dir, 'embedding')
 
 # datafile
-raw_data = os.path.join(data_dir,  'train1029_w_bc.tsv')
+raw_data = os.path.join(data_dir, 'train_and_val.csv')
 
-# processed demo data path
-train_datafile = os.path.join(processed_data_dir,  'train.csv')
-val_datafile = os.path.join(processed_data_dir,  'val.csv')
-test_datafile = os.path.join(processed_data_dir,  'test.csv')
+test_datafile = os.path.join(data_dir, 'test.csv')
+
+# TODO: processed data path
+train_datafile = os.path.join(processed_data_dir, 'train.csv')
+val_datafile = os.path.join(processed_data_dir, 'val.csv')
 
 result_dir = os.path.join(work_dir, 'Result')
 svm_result_file = os.path.join(result_dir, 'SVM', 'svm_res.md')
@@ -25,4 +26,3 @@ MAX_SEQUENCE_LENGTH = None
 
 # hyper-params
 # TODO
-

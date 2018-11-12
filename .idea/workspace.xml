@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82cf1280-32d9-49f5-8995-f02a701bed3e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs.py" beforeDir="false" afterPath="$PROJECT_DIR$/configs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/train.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/textCNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/textCNN.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -11,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/IntentClassification$textCNN.coverage" NAME="textCNN Coverage Results" MODIFIED="1541961957325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/IntentClassification$textCNN.coverage" NAME="textCNN Coverage Results" MODIFIED="1541992638731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/IntentClassification$SVM_baseline.coverage" NAME="SVM_baseline Coverage Results" MODIFIED="1541912767270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -20,35 +25,36 @@
         <counts>
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.4" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="60" />
+          <entry key="py" value="75" />
           <entry key="sh" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Bash" value="2" />
-          <entry key="Python" value="60" />
+          <entry key="Python" value="75" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="82" />
           <entry key="dummy" value="3" />
-          <entry key="py" value="5324" />
+          <entry key="py" value="5845" />
           <entry key="sh" value="86" />
+          <entry key="textCNN" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bash" value="86" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="5406" />
+          <entry key="Python" value="5942" />
         </counts>
       </usages-collector>
     </session>
@@ -58,22 +64,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/textCNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="166" column="12" lean-forward="true" selection-start-line="166" selection-start-column="12" selection-end-line="166" selection-end-column="12" />
+            <state relative-caret-position="101">
+              <caret line="55" column="59" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
               <folding>
-                <element signature="e#510#531#0" expanded="true" />
-                <marker date="1541963481270" expanded="true" signature="3105:3110" ph="..." />
-                <marker date="1541963481270" expanded="true" signature="5003:7215" ph="..." />
+                <element signature="e#496#517#0" expanded="true" />
+                <marker date="1541995937841" expanded="true" signature="3194:3199" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../ENV/anaconda3/envs/mlp/lib/python3.6/site-packages/tensorflow/python/keras/engine/training.py">
+        <entry file="file://$PROJECT_DIR$/configs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-135">
-              <caret line="323" column="6" selection-start-line="323" selection-start-column="6" selection-end-line="323" selection-end-column="6" />
+            <state relative-caret-position="131">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -82,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/run_textCNN.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -90,11 +95,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_loader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="604">
-              <caret line="57" column="26" lean-forward="true" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+            <state relative-caret-position="165">
+              <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
               <folding>
                 <element signature="e#337#358#0" expanded="true" />
-                <marker date="1541962510808" expanded="true" signature="1064:1381" ph="..." />
+                <marker date="1541991474664" expanded="true" signature="990:1154" ph="..." />
+                <marker date="1541991474664" expanded="true" signature="1437:1754" ph="..." />
               </folding>
             </state>
           </provider>
@@ -119,6 +125,8 @@
       <find>fit(</find>
       <find>to_ca</find>
       <find>os</find>
+      <find>EPOC</find>
+      <find>Token</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,10 +138,12 @@
         <option value="$PROJECT_DIR$/model/SVM_baseline.py" />
         <option value="$PROJECT_DIR$/model/__init__.py" />
         <option value="$PROJECT_DIR$/run_SVM.sh" />
-        <option value="$PROJECT_DIR$/configs.py" />
         <option value="$PROJECT_DIR$/SVM_baseline.py" />
         <option value="$PROJECT_DIR$/run_textCNN.sh" />
+        <option value="$PROJECT_DIR$/data_preprocessing.py" />
+        <option value="$PROJECT_DIR$/configs.py" />
         <option value="$PROJECT_DIR$/data_loader.py" />
+        <option value="$PROJECT_DIR$/../../ENV/anaconda3/envs/mlp/lib/python3.6/site-packages/keras_preprocessing/text.py" />
         <option value="$PROJECT_DIR$/textCNN.py" />
       </list>
     </option>
@@ -180,7 +190,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -192,6 +201,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -281,9 +291,6 @@
       <module name="IntentClassification" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -336,8 +343,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23891273" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24248926" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -346,20 +354,20 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39900866" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32939634" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3283767" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3283767" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3283767" />
-      <window_info anchor="right" x="0" y="0" width="290" height="677" id="Documentation" side_tool="true" weight="0.32928678" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3283767" />
+      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.3283767" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Remote Host" order="3" />
       <window_info anchor="right" id="SciView" order="4" weight="0.6609442" />
       <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" x="0" y="0" width="290" height="677" id="Documentation" order="6" side_tool="true" weight="0.32928678" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -402,20 +410,45 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/textCNN.py</url>
-          <line>168</line>
-          <option name="timeStamp" value="4" />
+          <line>153</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="to_categorical(np.asarray(y_train))" language="Python" />
-        <watch expression="y_train.shape[1]" language="Python" />
+        <watch expression="np.asarray(X_train).shape" language="Python" />
+        <watch expression="np.asarray(X_val).shape" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>np.where(np.isnan(X_train))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>np.where(np.isnan(np.asarray(X_train)))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>text.lower()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>np.asarray(X_val).shape</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>np.asarray(X_train).shape</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>y_train.shape[1]</expression-string>
         <language-id>Python</language-id>
@@ -450,9 +483,6 @@
           <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_preprocessing.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../../ENV/anaconda3/envs/mlp/lib/python3.6/site-packages/tensorflow/python/ops/embedding_ops.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -514,12 +544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1031">
           <caret line="80" column="60" selection-start-line="80" selection-start-column="60" selection-end-line="81" />
-          <folding>
-            <element signature="e#499#520#0" expanded="true" />
-            <marker date="1541954786661" expanded="true" signature="586:591" ph="..." />
-            <marker date="1541954786661" expanded="true" signature="3856:3857" ph="..." />
-            <marker date="1541954786661" expanded="true" signature="3856:3861" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -534,20 +558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="6409" column="4" selection-start-line="6409" selection-start-column="4" selection-end-line="6409" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../ENV/anaconda3/envs/mlp/lib/python3.6/site-packages/keras_preprocessing/text.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="368" column="23" selection-start-line="368" selection-start-column="8" selection-end-line="368" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
@@ -574,9 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="240" column="20" selection-start-line="240" selection-start-column="20" selection-end-line="240" selection-end-column="20" />
-          <folding>
-            <element signature="e#10598#16418#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -608,42 +615,101 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../ENV/anaconda3/envs/mlp/lib/python3.6/os.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ENV/anaconda3/envs/mlp/lib/python3.6/site-packages/tensorflow/python/keras/engine/training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="323" column="6" selection-start-line="323" selection-start-column="6" selection-end-line="323" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ENV/anaconda3/envs/mlp/lib/python3.6/site-packages/sklearn/model_selection/_split.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="1919" column="4" selection-start-line="1919" selection-start-column="4" selection-end-line="1919" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+          <folding>
+            <marker date="1541990270696" expanded="true" signature="367:369" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ENV/anaconda3/envs/mlp/lib/python3.6/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="331" selection-start-line="331" selection-end-line="331" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ENV/anaconda3/envs/mlp/lib/python3.6/site-packages/keras/preprocessing/text.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data_loader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="57" column="26" lean-forward="true" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+        <state relative-caret-position="165">
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
           <folding>
             <element signature="e#337#358#0" expanded="true" />
-            <marker date="1541962510808" expanded="true" signature="1064:1381" ph="..." />
+            <marker date="1541991474664" expanded="true" signature="990:1154" ph="..." />
+            <marker date="1541991474664" expanded="true" signature="1437:1754" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ENV/anaconda3/envs/mlp/lib/python3.6/site-packages/pandas/core/dtypes/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="650" selection-start-line="650" selection-end-line="650" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ENV/anaconda3/envs/mlp/lib/python3.6/site-packages/pandas/core/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="824" selection-start-line="824" selection-end-line="824" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run_textCNN.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../ENV/anaconda3/envs/mlp/lib/python3.6/site-packages/tensorflow/python/keras/engine/training.py">
+    <entry file="file://$PROJECT_DIR$/../../ENV/anaconda3/envs/mlp/lib/python3.6/site-packages/keras_preprocessing/text.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="323" column="6" selection-start-line="323" selection-start-column="6" selection-end-line="323" selection-end-column="6" />
+        <state relative-caret-position="336">
+          <caret line="297" selection-start-line="297" selection-end-line="297" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../ENV/anaconda3/envs/mlp/lib/python3.6/os.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/textCNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="166" column="12" lean-forward="true" selection-start-line="166" selection-start-column="12" selection-end-line="166" selection-end-column="12" />
+        <state relative-caret-position="101">
+          <caret line="55" column="59" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
           <folding>
-            <element signature="e#510#531#0" expanded="true" />
-            <marker date="1541963481270" expanded="true" signature="3105:3110" ph="..." />
-            <marker date="1541963481270" expanded="true" signature="5003:7215" ph="..." />
+            <element signature="e#496#517#0" expanded="true" />
+            <marker date="1541995937841" expanded="true" signature="3194:3199" ph="..." />
           </folding>
         </state>
       </provider>

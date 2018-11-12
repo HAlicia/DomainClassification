@@ -26,17 +26,19 @@ from configs import *
 
 import tensorflow as tf
 from tensorflow.keras.preprocessing.text import Tokenizer
+from keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import Model
 from keras.utils.np_utils import to_categorical
 from tensorflow.keras.layers import Dense, Dropout, Embedding, Conv1D, GlobalMaxPool1D, Activation, Flatten, Input
 from sklearn.preprocessing import LabelEncoder
 import matplotlib.pyplot as plt
+import pandas as pd
 
 import argparse
 import numpy as np
 
-from data_loader import load_data, load_testset, load_pretrained_edmbedding
+from data_loader import load_data, load_testset, load_pretrained_edmbedding, split_and_load_data
 
 parser = argparse.ArgumentParser(description="SVM configuration ...")
 
@@ -44,18 +46,18 @@ parser.add_argument("--static_mode", choices=[True, False], default=False,
                     help="whether it is static")
 parser.add_argument("--USE_WORD_EMBDEDDING", choices=[True, False], default=False,
                     help="use word embedding?")
-parser.add_argument("--NUM_EPOCH", type=int, default=5,
+parser.add_argument("--NUM_EPOCH", type=int, default=20,
                     help="NUM_EPOCH")
 
 # TODO
 parser.add_argument("--WORD_EMBDEDDING_TYPE", choices=['glove', 'fasttext', 'sg', 'cbow'], default='glove',
                     help="word embedding type")
 
-parser.add_argument("--MAX_NUM_WORDS", type=int, default=1000,
+parser.add_argument("--MAX_NUM_WORDS", type=int, default=30000,
                     help="MAX_NUM_WORDS")
-parser.add_argument("--MAX_SEQUENCE_LENGTH", type=int, default=100,
+parser.add_argument("--MAX_SEQUENCE_LENGTH", type=int, default=50,
                     help="MAX SEQUENCE LENGTH")
-parser.add_argument("--EMBEDDING_DIM", type=int, default=300,
+parser.add_argument("--EMBEDDING_DIM", type=int, default=64,
                     help="word embedding dimension")
 
 parser.add_argument("--BATCH_SIZE", type=int, default=128,
@@ -83,6 +85,7 @@ filters = args.filters
 kernel_size = args.kernel_size
 strides = args.strides
 padding = args.padding
+
 
 if USE_WORD_EMBDEDDING:
     embedding_path = {'glove': '', 'fasttext': '', 'sg': '', 'cbow': ''}  # TODO
@@ -139,8 +142,9 @@ class textCNN(object):
 
 
 def data_provider():
-    (X_train, y_train), (X_val, y_val) = load_data()
-    tokenizer = Tokenizer(MAX_NUM_WORDS)
+    (X_train, y_train), (X_val, y_val) = split_and_load_data(split_frac=.33)
+    tokenizer = Tokenizer(MAX_NUM_WORDS, char_level=True)
+    # loc = np.where(np.isnan(np.asarray(X_train)))
     tokenizer.fit_on_texts(X_train)
     word_index = tokenizer.word_index
     vocab_size = len(word_index) + 1
