@@ -46,7 +46,7 @@ parser.add_argument("--static_mode", choices=[True, False], default=False,
                     help="whether it is static")
 parser.add_argument("--USE_WORD_EMBDEDDING", choices=[True, False], default=False,
                     help="use word embedding?")
-parser.add_argument("--NUM_EPOCH", type=int, default=20,
+parser.add_argument("--NUM_EPOCH", type=int, default=100,
                     help="NUM_EPOCH")
 
 # TODO
@@ -66,7 +66,7 @@ parser.add_argument("--filters", type=int, default=3,
                     help="filters")
 parser.add_argument("--kernel_size", type=int, default=3,
                     help="kernel size")
-parser.add_argument("--strides", type=int, default=3,
+parser.add_argument("--strides", type=int, default=1,
                     help="strides")
 parser.add_argument("--padding", choices=['valid', 'same'], default='valid',
                     help="padding method")
