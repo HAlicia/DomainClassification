@@ -64,7 +64,7 @@ X_test_mat = tokenizer.texts_to_matrix(X_test, feat)
 y_test_le = le.transform(y_test)
 y_pred = clf.predict(X_test_mat)
 confusionMat = confusion_matrix(y_test_le, y_pred)
-f1_measure = classification_report(y_test_le, y_pred)
+f1_measure = classification_report(y_test_le, y_pred, target_names=list(le.classes_))
 
 print(confusionMat)
 print(f1_measure)
