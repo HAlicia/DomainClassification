@@ -44,34 +44,41 @@ def tokenize_jieba(data_file, outfile=None, userdictList=None):
 
 
 def load_train_val_data():
-    if os.path.exists(raw_data_cut):
-        df = pd.read_csv(raw_data_cut, names=["X", "y"])
-        return df["X"], df["y"].apply(lambda x: x.strip())
-    else:
-        X, y = tokenize_jieba(data_file=raw_data, outfile=raw_data_cut, userdictList=[singer_dict, song_dict])
-        return X, y
+    # if os.path.exists(raw_data_cut):
+    #     df = pd.read_csv(raw_data_cut, names=["X", "y"])
+    #     return df["X"], df["y"].apply(lambda x: x.strip())
+    # else:
+    #     X, y = tokenize_jieba(data_file=raw_data, outfile=raw_data_cut, userdictList=[singer_dict, song_dict])
+    #     return X, y
+
+    # no tokenization
+    df = pd.read_csv(raw_data, names=["X", "y"], sep='\t')
+    return df["X"], df["y"].apply(lambda x: x.strip())
 
 
-def split_and_load_data(split_frac=.2):
-    # data = pd.read_csv(raw_data, sep='\t', names=['X', 'y'])
-    # X, y = data['X'], data['y']
-    X, y = tokenize_jieba(data_file=raw_data)
-    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=split_frac, random_state=SEED, shuffle=True)
-    return (X_train, y_train), (X_val, y_val)
+# def split_and_load_data(split_frac=.2):
+#     # data = pd.read_csv(raw_data, sep='\t', names=['X', 'y'])
+#     # X, y = data['X'], data['y']
+#     X, y = tokenize_jieba(data_file=raw_data)
+#     X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=split_frac, random_state=SEED, shuffle=True)
+#     return (X_train, y_train), (X_val, y_val)
 
 
-def load_testset(testset_cut=None):
+def load_testset(test_file):
     # test set already cut!
-    if testset_cut is not None:
-        df = pd.read_csv(testset_cut, names=['X', 'y'], sep='\t')
-        return df["X"], df["y"].apply(lambda x: x.strip())
-    # load original test data
-    if os.path.exists(test_datafile_cut):
-        df = pd.read_csv(test_datafile_cut, names=['X', 'y'])
-        return df["X"], df["y"].apply(lambda x: x.strip())
-    else:
-        X, y = tokenize_jieba(test_datafile, outfile=test_datafile_cut, userdictList=[singer_dict, song_dict])
-        return X.astype(str), y.astype(str)
+    # if testset_cut is not None:
+    #     df = pd.read_csv(testset_cut, names=['X', 'y'], sep='\t')
+    #     return df["X"], df["y"].apply(lambda x: x.strip())
+    # # load original test data
+    # if os.path.exists(test_datafile_cut):
+    #     df = pd.read_csv(test_datafile_cut, names=['X', 'y'])
+    #     return df["X"], df["y"].apply(lambda x: x.strip())
+    # else:
+    #     X, y = tokenize_jieba(test_datafile, outfile=test_datafile_cut, userdictList=[singer_dict, song_dict])
+    #     return X.astype(str), y.astype(str)
+
+    df = pd.read_csv(test_file, names=['X', 'y'], sep='\t')
+    return df["X"].apply(lambda x: x.strip()), df["y"].apply(lambda x: x.strip())
 
 
 def load_pretrained_edmbedding(embedding_file):
